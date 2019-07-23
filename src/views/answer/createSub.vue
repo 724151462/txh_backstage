@@ -109,9 +109,14 @@ export default {
       console.log(this.subList)
       createSubj({interactionId: this.actId, subjectList: this.subList}).then(res => {
         if(res.code === 200) {
-          this.$message({
-            message: '添加成功',
-            type: 'success'
+          this.$confirm('设置题目成功，前往签到？', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            this.$router.push({
+              path: '/active/sign'
+            })
           })
         }
       })

@@ -4,8 +4,8 @@ module.exports = {
     disableHostCheck: true,
     proxy: {
       '/api': {
-        target: 'http://255920k78z.qicp.vip',
-        // target: 'http://192.168.10.48:9011',
+        // target: 'http://255920k78z.qicp.vip',
+        target: 'http://192.168.10.55:9011',
         secure: false,
         ws: true,
         changeOrigin: true

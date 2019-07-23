@@ -113,6 +113,7 @@ export default {
             type: 'success'
           })
           this.activeList()
+          this.dialogVisible = false
         }
       })
     }

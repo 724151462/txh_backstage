@@ -7,11 +7,11 @@
           <img v-else-if="index === 1" :src="require('../../assets/images/second.jpg')" alt="">
           <img v-else-if="index === 2" :src="require('../../assets/images/third.jpg')" alt="">
           <span v-else style="width: 22px" alt="">{{index + 1}}</span>
-          <img :src="require('../../assets/images/avatar.png')" class="avatar mar-l-20" style="height: 30px;width: 30px" alt="">
+          <img :src="item.avatar || require('../../assets/images/avatar.png')" class="avatar mar-l-20" style="height: 30px;width: 30px" alt="">
           <span class="mar-l-20">{{item.nickName}}</span>
         </div>
-        <span class="mar-l-30">6题</span>
-        <span>500元现金红包</span>
+        <span class="mar-l-30">{{item.score/10}}题</span>
+        <span>{{item.prizeTitle}}: {{item.prizeName}}</span>
       </div>
     </div>
 </template>
@@ -38,10 +38,13 @@ export default {
       ]
     }
   },
+  created() {
+    this.getRewardRes()
+  },
   methods: {
     getRewardRes() {
       rewardRes({interactionId: this.actId}).then(res => {
-        
+        this.phbRes = res.data
       })
     }
   },

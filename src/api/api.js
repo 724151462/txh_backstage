@@ -61,3 +61,15 @@ export function setPrize(data) {
 export function createAct(data) {
   return commonsAjax(`/interaction/v1/admin/interaction/`, data, 'put')
 }
+
+export function signNum(data) {
+  return commonsAjax(`/interaction/v1/interaction/${data}/sign/noqr/status.1`)
+}
+
+export function endSign(data) {
+  return commonsAjax(`/interaction/v1/interaction/${data}/sign/status.2`)
+}
+
+export function getPrize(data) {
+  return commonsAjax(`/prize/v1/admin/interaction/${data}/prize`)
+}

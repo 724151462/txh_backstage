@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import {setPrize} from '../../api/api'
+import {setPrize, startAns} from '../../api/api'
 export default {
   data() {
     return {
@@ -45,7 +45,8 @@ export default {
           //   type: 1
           // }
         ]
-      }
+      },
+      actId: this.$store.state.actId
     }
   },
   created() {
@@ -85,10 +86,20 @@ export default {
       })
       setPrize(data).then(res => {
         if(res.code === 200) {
-          this.$message({
-            message: '设置成功~',
-            type: 'success'
-          })
+          this.$confirm('设置成功，是否开始答题？', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            startAns({interactionId: this.actId, status: 1}).then(response => {
+              if(response.code === 200) {
+                this.$router.push({path: '/answer/status'})
+              }
+            })
+            
+          }).catch((err) => {
+            
+          });
         }else{
           this.$message({
             message: res.msg,
