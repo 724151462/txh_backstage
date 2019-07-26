@@ -5,7 +5,7 @@ module.exports = {
     proxy: {
       '/api': {
         // target: 'http://255920k78z.qicp.vip',
-        target: 'http://192.168.10.55:9011',
+        target: 'https://hometown.tskedu.com',
         secure: false,
         ws: true,
         changeOrigin: true

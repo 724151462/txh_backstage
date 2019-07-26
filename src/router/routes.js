@@ -84,6 +84,11 @@ let routes = [
         path: '/answer/sjcj',
         name: 'sjcj',
         component: () => import(/* webpackChunkName: "sjcj" */ '../views/answer/sjcj.vue')
+      },
+      {
+        path: '/daren/list',
+        name: 'drlist',
+        component: () => import(/* webpackChunkName: "drlist" */ '../views/daren/drlist.vue')
       }
     ]
     }

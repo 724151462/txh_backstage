@@ -10,7 +10,7 @@
                 style="flex: 0 0 6%"
                 v-for="(i, index) in subList"
                 :key="index"
-                :class="['sub-index','mar-l-20',selectIndex+1 === i ? 'subj-select' : '']"
+                :class="['sub-index','mar-l-20',selectIndex === index ? 'subj-select' : '']"
                 @click="selectObj(i, index)"
               >{{index+1}}</div>
             </div>

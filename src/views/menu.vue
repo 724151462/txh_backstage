@@ -7,9 +7,9 @@
       <div>
         <img :src="require('../assets/images/jlgl.jpg')" alt="">
       </div>
-      <div>
+      <router-link :to="{path: '/daren/list'}">
         <img :src="require('../assets/images/txdr.jpg')" alt="">
-      </div>
+      </router-link>
       <div>
         <img :src="require('../assets/images/zcsh.jpg')" alt="">
       </div>

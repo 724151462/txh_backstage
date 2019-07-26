@@ -30,7 +30,7 @@ export default {
   methods: {
     setNavText(val) {
       let {left, right} = val
-      if (val.left !== undefined) this.leftText = left
+      // if (val.left !== undefined) this.leftText = left
       if (val.right !== undefined) {
         this.timeText = false
         this.rightText = right

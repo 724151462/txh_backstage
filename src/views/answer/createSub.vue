@@ -22,12 +22,10 @@
             type="textarea"
           ></el-input>
           <div class="row mar-t-20 ju-start">
-            <el-radio v-model="item.multipleSubject" @change="cleanSelect(item)" :label="2">单选</el-radio>
-            <el-radio v-model="item.multipleSubject" @change="cleanSelect(item)" :label="1">多选</el-radio>
             <el-button type="primary" @click="addOption">添加选项</el-button>
           </div>
           <div class="mar-t-20">
-            <div class="row" v-for="(option, index) in item.options" :key="index">
+            <div class="row mar-t-10" v-for="(option, index) in item.options" :key="index">
               <span>{{abc[index]}}</span>
               <el-input
                 class="option-width mar-l-20"

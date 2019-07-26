@@ -73,3 +73,11 @@ export function endSign(data) {
 export function getPrize(data) {
   return commonsAjax(`/prize/v1/admin/interaction/${data}/prize`)
 }
+
+export function getRzlist(data) {
+  return commonsAjax(`/people/v1/people/admin/list/${data}`)
+}
+
+export function rzStatu(data) {
+  return commonsAjax(`/people/v1/people/${data.peopleId}/auditstatus/${data.auditStatus}`)
+}
