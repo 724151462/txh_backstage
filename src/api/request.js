@@ -28,7 +28,7 @@ axios.interceptors.response.use(
     if (res.data && Number(res.data.code) === 401) {
       removeToken()
       Globe_VM.$router.push({
-        path: '/center/zhuce'
+        path: '/'
       })
     }
     if (res.data) {

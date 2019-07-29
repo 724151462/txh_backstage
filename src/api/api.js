@@ -78,6 +78,14 @@ export function getRzlist(data) {
   return commonsAjax(`/people/v1/people/admin/list/${data}`)
 }
 
+export function drImgPreview(data) {
+  return commonsAjax(`/people/v1/people/${data}/resource`)
+}
+
 export function rzStatu(data) {
   return commonsAjax(`/people/v1/people/${data.peopleId}/auditstatus/${data.auditStatus}`)
+}
+
+export function getToplist() {
+  return commonsAjax(`/admin/topic/v1/page?publishStatus=1`)
 }

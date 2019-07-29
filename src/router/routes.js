@@ -89,6 +89,11 @@ let routes = [
         path: '/daren/list',
         name: 'drlist',
         component: () => import(/* webpackChunkName: "drlist" */ '../views/daren/drlist.vue')
+      },
+      {
+        path: '/jlgl/list',
+        name: 'jllist',
+        component: () => import(/* webpackChunkName: "jllist" */ '../views/community/list.vue')
       }
     ]
     }

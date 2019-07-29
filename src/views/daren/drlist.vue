@@ -51,18 +51,18 @@
       </template>
     </el-table-column>
   </el-table>
-  <el-dialog
-    title="提示"
+   <el-dialog
+    title="预览"
     :visible.sync="dialogVisible"
-    width="30%">
-    <el-image :src="prereviewImg"></el-image>
+    width="50%"
+    :modal="false">
+    <img class="mar-r-30" width="30%" v-for="(item, index) in prereviewImg" :key="index" :src="item" />
   </el-dialog>
-
   </div>
 </template>
 
 <script>
-import {getRzlist, rzStatu} from '../../api/api'
+import {getRzlist, rzStatu, drImgPreview} from '../../api/api'
 export default {
   data() {
     return {
@@ -70,7 +70,8 @@ export default {
       tableData: [
         
       ],
-      prereviewImg: ''
+      prereviewImg: '',
+      dialogVisible: false
     };
   },
   created() {
@@ -109,6 +110,12 @@ export default {
           })
           this.getRzlist(2)
         }
+      })
+    },
+    prereview(item) {
+      this.dialogVisible = true
+      drImgPreview(item.peopleId).then(res => {
+        this.prereviewImg = res.data.images
       })
     }
   }
